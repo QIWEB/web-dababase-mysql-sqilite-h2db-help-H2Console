@@ -53,3 +53,25 @@ JNDI Data Source
 "uk">Українська 
 "zh_CN">中文 (简体) 
 "zh_TW">中文 (繁體) 
+
+
+# mysql8需要关闭ssl
+关闭ssl
+由于容器默认可能没有安装vi或vim，你需要使用包管理器（如apt-get，假设容器基于Debian或Ubuntu）来安装。先更新软件包列表，然后安装vim：
+Bash
+apt-get update && apt-get install -y vim
+ssl=0
+
+/etc/mysql/my.cnf 
+
+登录到SHOW VARIABLES LIKE '%ssl%';
+[mysqld]
+ssl=0
+skip_ssl
+
+
+echo ssl=0 >> my.cnf
+echo skip_ssl >> my.cnf
+
+驱动使用 com.mysql.cj.jdbc.Driver
+mysql5使用
