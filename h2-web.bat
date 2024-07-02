@@ -1,0 +1,1 @@
+java -cp "h2-2.1.214.jar;sqlite-jdbc-3.34.0.jar;mysql-connector-java-5.1.32.jar" org.h2.tools.Server -web -webAllowOthers -webAdminPassword yourSecurePassword
